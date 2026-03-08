@@ -13,10 +13,14 @@ class Option:
     maturity: float  # time to maturity in years
     IsCall: bool  # True for call, False for put
     IsEuropean: bool  # True for European's option, False for American's option
-    div: list(tuple)  # Veuillez entrez les dividendes dans une liste de tuples. Ex:[(1, 50), (2,50)...(Maturité en années, Montant en euros]
+    option_type: str
+    barrier: float = None
+    div: div: list[tuple[float, float]] = None  # Veuillez entrez les dividendes dans une liste de tuples. Ex:[(1, 50), (2,50)...(Maturité en années, Montant en euros]
 
 
-    def pricer(self):
+    OPTION_TYPES = ["AVERAGE_STRIKE", "AVERAGE_PRICE", "STRIKE_MIN", "STRIKE_MAX", "DOWN_IN", "DOWN_OUT", "UP_IN", "UP_OUT"]
+
+    def price(self):
         if self.IsEuropean == True:
             return black_sholes.price(self)
         else:
