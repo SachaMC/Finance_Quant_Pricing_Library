@@ -44,3 +44,4 @@ class Curve_Interpolation:
                 rates[compteur] = interpolate(period[compteur],self.curve.curve_data["Maturity"].loc[i], self.curve.curve_data["Maturity"].loc[i+1], self.curve.curve_data["Rate"].loc[i], self.curve.curve_data["Rate"].loc[i+1])
                 compteur += 1
         return period, rates
+
