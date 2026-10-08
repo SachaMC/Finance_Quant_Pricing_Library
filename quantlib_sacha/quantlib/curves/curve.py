@@ -2,6 +2,7 @@ import numpy as np
 from dataclasses import dataclass
 import pandas as pd
 
+#nouveau push avec nouveau compte
 @dataclass
 class Curve:
     curve_data: pd.DataFrame

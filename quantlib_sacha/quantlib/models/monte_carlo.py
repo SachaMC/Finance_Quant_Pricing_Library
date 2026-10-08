@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from quantlib_sacha.quantlib.instruments.option import Option
 
-
+#nouveau push avec nouveau compte
 class MonteCarlo:
     def __init__(self, simulations : int, steps : int, seed : int | None = 42):
         self.simulations = simulations
